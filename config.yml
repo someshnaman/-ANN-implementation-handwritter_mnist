@@ -3,7 +3,7 @@ params:
   batch_size: 32
   num_classes: 10
   loss_function: sparse_categorical_crossentropy
-  metrices: accuracy
+  metrics: accuracy
   optimizer: SGD
   validation_dataset: 5000
   patience: 5
