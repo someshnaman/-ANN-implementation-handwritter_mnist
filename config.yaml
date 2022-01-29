@@ -1,5 +1,5 @@
 params:
-  epoch: 1
+  epochs: 5
   batch_size: 32
   num_classes: 10
   loss_function: sparse_categorical_crossentropy
@@ -7,7 +7,7 @@ params:
   optimizer: SGD
   validation_dataset: 5000
   patience: 5
-  restore_best_weight: True
+  restore_best_weights: True
 
 artifacts:
   artifacts_dir: artifacts

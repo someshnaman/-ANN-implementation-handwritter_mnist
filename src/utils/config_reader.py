@@ -1,6 +1,7 @@
 import yaml
 
-def config_reader(path):
+
+def Config_reader(path):
     """
 
     :type path: path of the yaml file where all your configuration details is present

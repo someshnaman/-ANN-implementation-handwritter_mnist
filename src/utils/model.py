@@ -1,17 +1,20 @@
 import tensorflow as tf
+from tensorflow.keras import layers
 import time
 import os
 
 
+
 class Model:
-    def __init__(self, LOSS_FUNCTION, OPTIMIZER, METRICS, NUM_CLASSES):
+    def __init__(self):
+        pass
+
+    def create_model(self, LOSS_FUNCTION, OPTIMIZER, METRICS, NUM_CLASSES):
         self.loss_function = LOSS_FUNCTION
         self.optimizer = OPTIMIZER
         self.metrics = METRICS
         self.num_classes = NUM_CLASSES
-
-    def create_model(self):
-        layers = [tf.keras.layers.Dense.Flatten(input_shape=[28, 28], name='input_layer'),
+        layers = [tf.keras.layers.Flatten(input_shape=[28, 28], name='input_layer'),
                   tf.keras.layers.Dense(300, activation='relu', name='hidden_layer1'),
                   tf.keras.layers.Dense(300, activation='relu', name='hidden_layer2'),
                   tf.keras.layers.Dense(self.num_classes, activation="softmax", name="outputLayer")]
@@ -30,4 +33,6 @@ class Model:
         unique_filename = self.get_unique_filename(model_name)
         path_to_model = os.path.join(model_dir, unique_filename)
         model.save(path_to_model)
+
+
 

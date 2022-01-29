@@ -1,10 +1,9 @@
 import tensorflow as tf
-from config_reader import config_reader
+from .config_reader import Config_reader
 
 
-def get_data():
-    path = '..\..\config.yml'
-    content = config_reader(path)
+def get_data(path):
+    content = Config_reader(path)
     validation_number = content['params']['validation_dataset']
 
     mnist = tf.keras.datasets.mnist
@@ -17,4 +16,3 @@ def get_data():
 
     return (X_train, y_train), (X_valid, y_valid), (X_test, y_test)
 
-get_data()
