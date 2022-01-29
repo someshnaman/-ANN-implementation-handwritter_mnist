@@ -1,0 +1,1 @@
+from src.utils.data_mgmt import get_data
